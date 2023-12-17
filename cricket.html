@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+</head>
+<body>
+  <div>
+    <h4>How to play</h4>
+    <li>select bat or ball or stump and computer will do the same</li>
+    <li>b/w bat and ball ,<b> bat wins</b></li>
+    <li>b/w bat and stump , <b>stump wins</b></li>
+    <li>b/w ball and stump , <b> ball wins</b></li>
+    <li>if computer choose the same as you then <b>draw</b> </li>
+  </div>
+    <div>
+    <h1>Bat Ball Stump Game</h1>
+       
+    <button onclick="   
+    u_c='Bat'
+    c_c=generate_cc()
+      //console.log(c_c,rand_num)
+
+      gen_result(u_c,c_c)
+    ">Bat</button>
+
+    <button onclick="
+    u_c='Ball'
+    c_c=generate_cc()
+      //console.log(c_c,rand_num)
+
+      gen_result(u_c,c_c)
+      ">Ball</button>
+    <button onclick="
+    u_c='Stump'
+      c_c=generate_cc()
+      //console.log(c_c,rand_num)
+
+      gen_result(u_c,c_c)
+      ">Stump</button>
+</div>
+
+<div>
+    <h3 class="result">Result :</h3>
+</div>
+
+<script>
+   let u_c =''
+   let c_c=''
+   let rand_num
+    //console.log(c_c)
+    function  generate_cc(){
+      rand_num=Math.trunc((Math.random()/4)*10) 
+      if(rand_num==0){ return 'Bat'}
+      else if(rand_num==1){return 'Ball'}
+      else if(rand_num==2){return 'Stump'}
+    }
+    function gen_result(u_c,c_c){
+
+      if(c_c=='Bat'){  res=('You Won as comp chose '+c_c)}
+      else if(c_c==u_c){res=('Draw . computer also chose '+c_c)}
+      else{ res=('You loose . Computer chose '+c_c)}
+      document.querySelector('.result').textContent='Result : '+res
+
+    }
+</script>
+</body>
+</html>
